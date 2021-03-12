@@ -43,7 +43,7 @@
       font-size: 1rem;
     }
 
-    #email_login, #password_login{
+    #username_login, #password_login{
       font-size: .7rem;
     }
   }
@@ -159,7 +159,7 @@
   }
 }
 
-#form-errors{
+#form-errors, .error-message{
   background-color: red;
   color: white;  
 }

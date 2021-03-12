@@ -42,17 +42,18 @@
 
     <main id="login-main">
         <h1><img src="{% static 'img/key.gif' %}" alt="spinning key"/><span>Password Kee<span>p</span>er</span>    </h1>
-        <form id="login-form">
+        <form id="login-form" action="{% url 'authmanager:login_user' %}" method="POST">
+            {% csrf_token %}
             <div class="nes-field">
-                <label for="email_login">Email</label>
-                <input type="email" id="email_login" class="nes-input" required>
+                <label for="username_login">Username</label>
+                <input type="text" id="username_login" name="username_login" class="nes-input" required>
             </div>
             <div class="nes-field">
                 <label for="password_login">Password</label>
-                <input type="password" id="password_login" class="nes-input" required>
+                <input type="password" id="password_login" name="password_login" class="nes-input" required>
             </div>
             
-            <button id="login-btn" type="button" class="nes-btn is-primary nes-pointer">Log In</button>
+            <input id="login-btn" type="submit" class="nes-btn is-primary nes-pointer" value="Log In"/>
         </form>
 
         <button id="open-form-btn" type="button" class="nes-btn is-warning">No account yet?<br/>Register now!</button>

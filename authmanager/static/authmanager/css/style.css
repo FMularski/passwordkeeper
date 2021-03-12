@@ -49,7 +49,7 @@
   font-size: 1rem;
 }
 
-#login-main form #email_login, #login-main form #password_login {
+#login-main form #username_login, #login-main form #password_login {
   font-size: .7rem;
 }
 
@@ -176,7 +176,7 @@
           animation: spin 0.75s linear infinite;
 }
 
-#form-errors {
+#form-errors, .error-message {
   background-color: red;
   color: white;
 }
