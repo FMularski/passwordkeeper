@@ -53,7 +53,7 @@
     padding: 0.5rem;
 
     &:hover {
-      animation: button-hop 0.4s ease-out;
+      animation: bounce 0.4s ease-out;
     }
   }
 }
@@ -130,12 +130,68 @@
   #register-btn {
     font-size: 1rem;
     &:hover {
-      animation: button-hop 0.4s ease-out;
+      animation: bounce 0.4s ease-out;
     }
   }
 }
 
-@keyframes button-hop {
+#form-errors{
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: red;
+  color: white;
+  width: 50rem;
+  font-size: 1rem;
+  animation: error-bounce 0.4s ease-out;
+
+  i#errors-close {
+    margin: 1rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    transform-origin: center;
+    transition: all 1s ease-out;
+
+    &:hover {
+      animation: spin 0.75s linear infinite;
+    }
+  }
+}
+
+@keyframes swoosh {
+  0%{
+    transform: translateX(-50%);
+  }
+  50%{
+    transform: translateX(-50%) translateY(20%);
+  }
+  100%{
+    transform: translateX(-50%) translateY(-200%);
+  }
+}
+
+@keyframes error-bounce {
+  0% {
+    transform: translateY(0) translateX(-50%);
+  }
+  25% {
+    transform: translateY(-25px) translateX(-50%);
+  }
+  50% {
+    transform: translateY(0) translateX(-50%);
+  }
+  75% {
+    transform: translateY(-10px) translateX(-50%);
+  }
+  100% {
+    transform: translateY(0px) translateX(-50%);
+  }
+}
+
+@keyframes bounce {
   0% {
     transform: translateY(0);
   }

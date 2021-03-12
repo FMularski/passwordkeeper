@@ -59,8 +59,8 @@
 }
 
 #login-main button:hover {
-  -webkit-animation: button-hop 0.4s ease-out;
-          animation: button-hop 0.4s ease-out;
+  -webkit-animation: bounce 0.4s ease-out;
+          animation: bounce 0.4s ease-out;
 }
 
 #open-form-btn {
@@ -143,11 +143,118 @@
 }
 
 #register-panel #register-btn:hover {
-  -webkit-animation: button-hop 0.4s ease-out;
-          animation: button-hop 0.4s ease-out;
+  -webkit-animation: bounce 0.4s ease-out;
+          animation: bounce 0.4s ease-out;
 }
 
-@-webkit-keyframes button-hop {
+#form-errors {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  background-color: red;
+  color: white;
+  width: 50rem;
+  font-size: 1rem;
+  -webkit-animation: error-bounce 0.4s ease-out;
+          animation: error-bounce 0.4s ease-out;
+}
+
+#form-errors i#errors-close {
+  margin: 1rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  -webkit-transition: all 1s ease-out;
+  transition: all 1s ease-out;
+}
+
+#form-errors i#errors-close:hover {
+  -webkit-animation: spin 0.75s linear infinite;
+          animation: spin 0.75s linear infinite;
+}
+
+@-webkit-keyframes swoosh {
+  0% {
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+  50% {
+    -webkit-transform: translateX(-50%) translateY(20%);
+            transform: translateX(-50%) translateY(20%);
+  }
+  100% {
+    -webkit-transform: translateX(-50%) translateY(-200%);
+            transform: translateX(-50%) translateY(-200%);
+  }
+}
+
+@keyframes swoosh {
+  0% {
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+  50% {
+    -webkit-transform: translateX(-50%) translateY(20%);
+            transform: translateX(-50%) translateY(20%);
+  }
+  100% {
+    -webkit-transform: translateX(-50%) translateY(-200%);
+            transform: translateX(-50%) translateY(-200%);
+  }
+}
+
+@-webkit-keyframes error-bounce {
+  0% {
+    -webkit-transform: translateY(0) translateX(-50%);
+            transform: translateY(0) translateX(-50%);
+  }
+  25% {
+    -webkit-transform: translateY(-25px) translateX(-50%);
+            transform: translateY(-25px) translateX(-50%);
+  }
+  50% {
+    -webkit-transform: translateY(0) translateX(-50%);
+            transform: translateY(0) translateX(-50%);
+  }
+  75% {
+    -webkit-transform: translateY(-10px) translateX(-50%);
+            transform: translateY(-10px) translateX(-50%);
+  }
+  100% {
+    -webkit-transform: translateY(0px) translateX(-50%);
+            transform: translateY(0px) translateX(-50%);
+  }
+}
+
+@keyframes error-bounce {
+  0% {
+    -webkit-transform: translateY(0) translateX(-50%);
+            transform: translateY(0) translateX(-50%);
+  }
+  25% {
+    -webkit-transform: translateY(-25px) translateX(-50%);
+            transform: translateY(-25px) translateX(-50%);
+  }
+  50% {
+    -webkit-transform: translateY(0) translateX(-50%);
+            transform: translateY(0) translateX(-50%);
+  }
+  75% {
+    -webkit-transform: translateY(-10px) translateX(-50%);
+            transform: translateY(-10px) translateX(-50%);
+  }
+  100% {
+    -webkit-transform: translateY(0px) translateX(-50%);
+            transform: translateY(0px) translateX(-50%);
+  }
+}
+
+@-webkit-keyframes bounce {
   0% {
     -webkit-transform: translateY(0);
             transform: translateY(0);
@@ -170,7 +277,7 @@
   }
 }
 
-@keyframes button-hop {
+@keyframes bounce {
   0% {
     -webkit-transform: translateY(0);
             transform: translateY(0);

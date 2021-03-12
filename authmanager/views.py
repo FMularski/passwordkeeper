@@ -11,9 +11,7 @@ def login_page(request):
             user = form.save(commit=False)
             user.pin = make_password(user.pin)
             user.save()
-            
             return redirect('authmanager:login_page')
-
-
+            
     context = {'form': form}
     return render(request, 'authmanager/login_page.html', context)
