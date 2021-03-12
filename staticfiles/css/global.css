@@ -1,0 +1,77 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Press Start 2P", cursive;
+}
+
+body {
+  background: url("../img/brick.png");
+  background-size: 5%;
+  background-color: black;
+}
+
+input {
+  margin: auto;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+  text-align: center;
+}
+
+input:focus {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+footer {
+  color: white;
+  width: 100%;
+  font-size: .8rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media screen and (max-width: 1600px) {
+  html {
+    font-size: 82.5%;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  html {
+    font-size: 72.5%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  html {
+    font-size: 65.5%;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  html {
+    font-size: 55.5%;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  html {
+    font-size: 45.5%;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  html {
+    font-size: 35.5%;
+  }
+}
+/*# sourceMappingURL=global.css.map */

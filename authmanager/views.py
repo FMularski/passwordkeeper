@@ -1,3 +1,6 @@
 from django.shortcuts import render
 
-# Create your views here.
+
+def login_page(request):
+    context = {}
+    return render(request, 'authmanager/login_page.html', context)
