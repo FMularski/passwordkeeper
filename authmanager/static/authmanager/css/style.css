@@ -147,21 +147,19 @@
           animation: bounce 0.4s ease-out;
 }
 
-#form-errors {
+.popup {
   position: absolute;
   top: 0;
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
-  background-color: red;
-  color: white;
   width: 50rem;
   font-size: 1rem;
   -webkit-animation: error-bounce 0.4s ease-out;
           animation: error-bounce 0.4s ease-out;
 }
 
-#form-errors i#errors-close {
+.popup .popup-close {
   margin: 1rem;
   position: absolute;
   top: 0;
@@ -173,9 +171,19 @@
   transition: all 1s ease-out;
 }
 
-#form-errors i#errors-close:hover {
+.popup .popup-close:hover {
   -webkit-animation: spin 0.75s linear infinite;
           animation: spin 0.75s linear infinite;
+}
+
+#form-errors {
+  background-color: red;
+  color: white;
+}
+
+.success-message {
+  background-color: lime;
+  color: white;
 }
 
 @-webkit-keyframes swoosh {

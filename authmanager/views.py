@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect
 from .forms import ExtendedUserCreationForm
 from django.contrib.auth.hashers import make_password
+from django.contrib import messages
+
 
 def login_page(request):
     form = ExtendedUserCreationForm()
@@ -11,6 +13,7 @@ def login_page(request):
             user = form.save(commit=False)
             user.pin = make_password(user.pin)
             user.save()
+            messages.success(request, f'User {user.username} successfully registered.')
             return redirect('authmanager:login_page')
             
     context = {'form': form}

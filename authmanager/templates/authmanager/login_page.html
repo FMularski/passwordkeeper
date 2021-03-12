@@ -23,8 +23,8 @@
   <body>
 
     {% if form.errors %}
-        <div id="form-errors" class="nes-container is-rounded">
-            <i id="errors-close" class="nes-icon close"></i>
+        <div id="form-errors" class="nes-container is-rounded popup">
+            <i  class="nes-icon close popup-close"></i>
                 {% for field in form %}
                     {% for error in field.errors %}
                         <p>* {{error}}</p>
@@ -32,6 +32,13 @@
                 {% endfor %}
         </div>
     {% endif %}
+
+    {% for message in messages %}
+    
+        <div class="{{message.tags}}-message popup nes-container is-rounded">
+            {{message}} <i  class="nes-icon close popup-close"></i>
+        </div>
+    {% endfor %}
 
     <main id="login-main">
         <h1><img src="{% static 'img/key.gif' %}" alt="spinning key"/><span>Password Kee<span>p</span>er</span>    </h1>

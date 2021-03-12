@@ -135,18 +135,16 @@
   }
 }
 
-#form-errors{
+.popup{
   position: absolute;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  background-color: red;
-  color: white;
   width: 50rem;
   font-size: 1rem;
   animation: error-bounce 0.4s ease-out;
 
-  i#errors-close {
+  .popup-close {
     margin: 1rem;
     position: absolute;
     top: 0;
@@ -159,6 +157,16 @@
       animation: spin 0.75s linear infinite;
     }
   }
+}
+
+#form-errors{
+  background-color: red;
+  color: white;  
+}
+
+.success-message {
+  background-color: rgb(0, 255, 0);
+  color: white;
 }
 
 @keyframes swoosh {
