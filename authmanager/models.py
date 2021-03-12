@@ -3,5 +3,5 @@ from django.contrib.auth.models import AbstractUser
 
 
 class ExtendedUser(AbstractUser):
-    pin = models.CharField(max_length=64, null=False, default='0000')
+    pin = models.CharField(max_length=255, null=False, default='0000')
 

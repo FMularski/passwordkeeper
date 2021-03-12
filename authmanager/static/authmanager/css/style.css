@@ -138,11 +138,11 @@
   font-size: 1rem;
 }
 
-#register-panel button {
+#register-panel #register-btn {
   font-size: 1rem;
 }
 
-#register-panel button:hover {
+#register-panel #register-btn:hover {
   -webkit-animation: button-hop 0.4s ease-out;
           animation: button-hop 0.4s ease-out;
 }
