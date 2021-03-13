@@ -1,0 +1,290 @@
+nav {
+  min-height: 10vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+nav div#nav-left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+nav div#nav-left img {
+  width: 3vw;
+  margin: 2rem;
+}
+
+nav div#nav-left h1 {
+  margin: 0 2vw 0 2vw;
+  font-size: 1.5vw;
+  color: white;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+}
+
+nav button {
+  width: 15vw;
+  font-size: 1vw;
+  margin: 0;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+nav button:hover {
+  -webkit-animation: button-hop 0.4s ease-out;
+          animation: button-hop 0.4s ease-out;
+}
+
+#home-main {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  font-family: "Press Start 2P", sans-serif;
+  min-height: 85vh;
+}
+
+#home-main table {
+  width: 90%;
+  margin: auto;
+  font-size: 0.75vw;
+  border: 3px solid white;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+}
+
+#home-main table td {
+  vertical-align: 0;
+}
+
+#home-main table .gear {
+  width: 3vw;
+  -webkit-transform-origin: center;
+          transform-origin: center;
+}
+
+#home-main table .gear:hover {
+  cursor: pointer;
+  -webkit-animation: spin 1s linear infinite;
+          animation: spin 1s linear infinite;
+}
+
+#home-main table tr.account td {
+  border-top: none;
+  border-bottom: none;
+}
+
+#home-main table tr.account-settings button {
+  width: 10vw;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+#home-main table tr.account-settings button:hover {
+  -webkit-animation: button-hop 0.4s ease-out;
+          animation: button-hop 0.4s ease-out;
+}
+
+.hidden {
+  display: none;
+}
+
+#dark-panel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-height: 100vh;
+  min-width: 100vw;
+  background: rgba(0, 0, 0, 0.3);
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  opacity: 0;
+  pointer-events: none;
+}
+
+#dark-panel.active {
+  pointer-events: all;
+  opacity: 1;
+}
+
+#account-form-panel {
+  position: absolute;
+  top: 0;
+  background: white;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(-110%);
+          transform: translateX(-50%) translateY(-110%);
+  text-align: center;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+
+#account-form-panel i {
+  margin: 1rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  -webkit-transition: all 1s ease-out;
+  transition: all 1s ease-out;
+}
+
+#account-form-panel i:hover {
+  -webkit-animation: spin 0.75s linear infinite;
+          animation: spin 0.75s linear infinite;
+}
+
+#account-form-panel label {
+  text-align: left;
+}
+
+#account-form-panel button {
+  width: 40%;
+}
+
+#account-form-panel button:hover {
+  -webkit-animation: button-hop 0.4s ease-out;
+          animation: button-hop 0.4s ease-out;
+}
+
+#account-form-panel.active {
+  -webkit-transform: translateX(-50%) translateY(5%);
+          transform: translateX(-50%) translateY(5%);
+}
+
+#pin-form {
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(-110%);
+          transform: translateX(-50%) translateY(-110%);
+  position: absolute;
+  background: white;
+  width: 40%;
+  text-align: center;
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  top: 0;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+
+#pin-form.active {
+  -webkit-transform: translateX(-50%) translateY(50%);
+          transform: translateX(-50%) translateY(50%);
+}
+
+#pin-form .pin {
+  width: 80%;
+  margin: auto;
+}
+
+#pin-form button {
+  width: 25%;
+}
+
+#pin-form button:hover {
+  -webkit-animation: button-hop 0.4s ease-out;
+          animation: button-hop 0.4s ease-out;
+}
+
+#pin-form i {
+  margin: 1rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  -webkit-transition: all 1s ease-out;
+  transition: all 1s ease-out;
+}
+
+#pin-form i:hover {
+  -webkit-animation: spin 0.75s linear infinite;
+          animation: spin 0.75s linear infinite;
+}
+
+@-webkit-keyframes button-hop {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  25% {
+    -webkit-transform: translateY(-15px);
+            transform: translateY(-15px);
+  }
+  50% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  75% {
+    -webkit-transform: translateY(-5px);
+            transform: translateY(-5px);
+  }
+  100% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+}
+
+@keyframes button-hop {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  25% {
+    -webkit-transform: translateY(-15px);
+            transform: translateY(-15px);
+  }
+  50% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  75% {
+    -webkit-transform: translateY(-5px);
+            transform: translateY(-5px);
+  }
+  100% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+}
+
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotateZ(0deg);
+            transform: rotateZ(0deg);
+  }
+  to {
+    -webkit-transform: rotateZ(360deg);
+            transform: rotateZ(360deg);
+  }
+}
+
+@keyframes spin {
+  from {
+    -webkit-transform: rotateZ(0deg);
+            transform: rotateZ(0deg);
+  }
+  to {
+    -webkit-transform: rotateZ(360deg);
+            transform: rotateZ(360deg);
+  }
+}
+/*# sourceMappingURL=style.css.map */

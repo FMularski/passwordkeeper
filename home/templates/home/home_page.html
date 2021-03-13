@@ -1,0 +1,130 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet"> 
+
+    <!-- css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link href="https://unpkg.com/nes.css@2.3.0/css/nes.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="{% static 'css/global.css'%}">
+    <link rel="stylesheet" href="{% static 'home/css/style.css'%}">
+
+    <link rel="icon" href="{% static 'img/key.ico' %}">
+
+    <title>Password Keeper | Home</title>
+  </head>
+  <body>
+    <nav>
+        <div id="nav-left">
+            <img src="{% static 'img/key.gif' %}" alt="spinning key"/>
+            <h1>Logged in as: {{user}}</h1>
+        </div>
+        
+        <div id="nav-right">
+            <button id="add-btn" type="button" class="nes-btn is-success">+ Add</button>
+            <button type="button" class="nes-btn is-normal">Export</button>
+            <button type="button" class="nes-btn is-normal">Settings</button>
+        </div>
+    </nav>
+    <main id="home-main">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>No.</th>
+                    <th>Title</th>
+                    <th>Login</th>
+                    <th>Email</th>
+                    <th>Password</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="account">
+                    <td>1</td>
+                    <td>google</td>
+                    <td>-</td>
+                    <td>filipelblag@gmail.com</td>
+                    <td>???</td>
+                    <td><img class="gear" src="{% static 'home/img/white-gear.png'%}" alt="gear"></td>
+                </tr>
+                <tr class="account-settings hidden">
+                    <td colspan="6">
+                        <button type="button" class="nes-btn is-warning show-btn">Show</button>
+                        <button type="button" class="nes-btn is-normal edit-btn">Edit</button>
+                        <button type="button" class="nes-btn is-error delete-btn">Delete</button>
+                    </td>
+                </tr>
+                <tr class="account">
+                    <td>2</td>
+                    <td>metin2</td>
+                    <td>songo200procent</td>
+                    <td>metin2@gmail.com</td>
+                    <td>???</td>
+                    <td><img class="gear" src="{% static 'home/img/white-gear.png'%}" alt="gear"></td>
+                </tr>
+                <tr class="account-settings hidden">
+                    <td colspan="6">
+                        <button type="button" class="nes-btn is-warning show-btn">Show</button>
+                        <button type="button" class="nes-btn is-normal edit-btn">Edit</button>
+                        <button type="button" class="nes-btn is-error delete-btn">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+    </main>
+
+    <footer>
+        Password Keeper 2021 - All rights reserved
+    </footer>
+
+    <div id="dark-panel" class=""></div>
+
+    <div id="account-form-panel" class="nes-container is-rounded">
+        <form id="account-form">
+            <i id="register-close" class="nes-icon close is-small"></i>
+            <div class="nes-field">
+                <label for="title">Title</label>
+                <input type="text" id="title" class="nes-input"><br/>
+            </div>
+            <div class="nes-field">
+                <label for="login">Login</label>
+                <input type="text" id="login" class="nes-input"><br/>
+            </div>
+            <div class="nes-field">
+                <label for="email">Email</label>
+                <input type="email" id="email" class="nes-input"><br/>
+            </div>
+            <div class="nes-field">
+                <label for="password">Password</label>
+                <input type="password" class="pin nes-input"><br/>
+            </div>
+            <div class="nes-field">
+                <label for="confirm">Confirm password</label>
+                <input type="password" id="confirm" class="nes-input"><br/>
+            </div>
+            <button type="button" class="nes-btn is-primary">OK</button>
+        </form>
+    </div>
+
+    <div id="pin-form" class="nes-container is-rounded">
+        <i id="register-close" class="nes-icon close is-small"></i>
+        <div class="nes-field">
+            <label for="pin">PIN</label>
+            <input type="password" class="pin nes-input"><br/>
+            <button type="button" class="nes-btn is-primary">OK</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="{% static 'home/js/home.js'%}"></script>
+  </body>
+</html>

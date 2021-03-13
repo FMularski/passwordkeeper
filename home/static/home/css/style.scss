@@ -1,0 +1,239 @@
+nav {
+    min-height: 10vh;
+    //   background: red;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+  
+    div#nav-left {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+  
+      img {
+        width: 3vw;
+        margin: 2rem;
+      }
+  
+      h1 {
+        margin: 0 2vw 0 2vw;
+        font-size: 1.5vw;
+        color: white;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: black;
+      }
+    }
+    button {
+      width: 15vw;
+      font-size: 1vw;
+      margin: 0;
+      transition: all 1s ease;
+  
+      &:hover {
+        animation: button-hop 0.4s ease-out;
+      }
+    }
+  }
+  
+  #home-main {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    font-family: "Press Start 2P", sans-serif;
+    min-height: 85vh;
+  
+    table {
+      width: 90%;
+      margin: auto;
+      font-size: 0.75vw;
+      border: 3px solid white;
+      background: rgba(0, 0, 0, 0.7);
+      color: white;
+  
+      td {
+        vertical-align: 0;
+      }
+  
+      .gear {
+        width: 3vw;
+        transform-origin: center;
+  
+        &:hover {
+          cursor: pointer;
+          animation: spin 1s linear infinite;
+        }
+      }
+  
+      tr.account {
+        td {
+          border-top: none;
+          border-bottom: none;
+        }
+      }
+  
+      tr.account-settings {
+        button {
+          width: 10vw;
+          transition: all 1s ease;
+  
+          &:hover {
+            animation: button-hop 0.4s ease-out;
+          }
+        }
+      }
+    }
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  #dark-panel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-height: 100vh;
+    min-width: 100vw;
+    background: rgba(0, 0, 0, 0.3);
+    transition: all 0.2s ease;
+  
+    opacity: 0;
+    pointer-events: none;
+  
+    &.active {
+      pointer-events: all;
+      opacity: 1;
+    }
+  }
+  
+  #account-form-panel {
+    position: absolute;
+    top: 0;
+    background: white;
+    left: 50%;
+    transform: translateX(-50%) translateY(-110%);
+    text-align: center;
+    transition: all 0.3s ease-out;
+  
+    i {
+      margin: 1rem;
+      position: absolute;
+      top: 0;
+      right: 0;
+      cursor: pointer;
+      transform-origin: center;
+      transition: all 1s ease-out;
+  
+      &:hover {
+        animation: spin 0.75s linear infinite;
+      }
+    }
+  
+    label {
+      text-align: left;
+    }
+  
+    button {
+      width: 40%;
+      &:hover {
+        animation: button-hop 0.4s ease-out;
+      }
+    }
+  
+    &.active {
+      transform: translateX(-50%) translateY(5%);
+    }
+  }
+  
+  #pin-form {
+    left: 50%;
+    transform: translateX(-50%) translateY(-110%);
+  
+    position: absolute;
+    background: white;
+    width: 40%;
+    text-align: center;
+    transform-origin: center;
+    top: 0;
+    transition: all 0.3s ease-out;
+  
+    &.active {
+      transform: translateX(-50%) translateY(50%);
+    }
+  
+    .pin {
+      width: 80%;
+      margin: auto;
+    }
+  
+    button {
+      width: 25%;
+      &:hover {
+        animation: button-hop 0.4s ease-out;
+      }
+    }
+  
+    i {
+      margin: 1rem;
+      position: absolute;
+      top: 0;
+      right: 0;
+      cursor: pointer;
+      transform-origin: center;
+      transition: all 1s ease-out;
+  
+      &:hover {
+        animation: spin 0.75s linear infinite;
+      }
+    }
+  }
+  
+  @keyframes button-hop {
+    0% {
+      transform: translateY(0);
+    }
+    25% {
+      transform: translateY(-15px);
+    }
+    50% {
+      transform: translateY(0);
+    }
+    75% {
+      transform: translateY(-5px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+  
+  @keyframes spin {
+    from {
+      transform: rotateZ(0deg);
+    }
+    to {
+      transform: rotateZ(360deg);
+    }
+  }
+  
+//   @media screen and (max-width: 750px) {
+//     nav {
+//       div#nav-left {
+//         h1 {
+//           -webkit-text-stroke-width: 0px;
+//         }
+//       }
+//     }
+//   }
+  
+//   @media screen and (max-width: 640px) {
+//     nav {
+//       margin-bottom: 2rem;
+//     }
+  
+//     #account-form-panel {
+//       width: 80%;
+//       font-size: 3vw;
+//     }
+//   }
+  

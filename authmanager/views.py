@@ -9,7 +9,6 @@ from django.views.decorators.http import require_http_methods
 
 def login_page(request):
     form = ExtendedUserCreationForm()
-
     if request.method == 'POST':
         form = ExtendedUserCreationForm(request.POST)
         if form.is_valid():
@@ -18,10 +17,10 @@ def login_page(request):
             user.save()
             messages.success(request, f'User {user.username} successfully registered.')
             return redirect('authmanager:login_page')
-            
+
     context = {'form': form}
     return render(request, 'authmanager/login_page.html', context)
-
+    
 
 @require_http_methods(['POST'])
 def login_user(request):
@@ -33,7 +32,7 @@ def login_user(request):
 
         if user:
             login(request, user)
-            return HttpResponse(request.user)
+            return redirect('home:home_page')
         else:
             messages.error(request, 'Username or password invalid.')
             return redirect('authmanager:login_page')
