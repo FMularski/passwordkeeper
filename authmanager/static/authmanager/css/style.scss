@@ -1,3 +1,7 @@
+body {
+  overflow-x: hidden;
+}
+
 #login-main {
   width: 100vw;
   margin: auto;
@@ -39,12 +43,12 @@
       font-size: 1rem;
     }
 
-    button {
-      font-size: 1rem;
-    }
-
     #username_login, #password_login{
       font-size: .7rem;
+    }
+
+    #login-btn{
+      font-size: 1rem;
     }
   }
 

@@ -1,3 +1,7 @@
+body {
+  overflow-x: hidden;
+}
+
 #login-main {
   width: 100vw;
   margin: auto;
@@ -45,12 +49,12 @@
   font-size: 1rem;
 }
 
-#login-main form button {
-  font-size: 1rem;
-}
-
 #login-main form #username_login, #login-main form #password_login {
   font-size: .7rem;
+}
+
+#login-main form #login-btn {
+  font-size: 1rem;
 }
 
 #login-main input[type="submit"] {

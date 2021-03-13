@@ -6,6 +6,11 @@
   font-family: "Press Start 2P", cursive;
 }
 
+html {
+  min-height: 100%;
+  position: relative;
+}
+
 body {
   background: url("../img/brick.png");
   background-size: 5%;
@@ -27,7 +32,7 @@ input:focus {
 footer {
   color: white;
   width: 100%;
-  font-size: .8rem;
+  font-size: .7rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -37,6 +42,9 @@ footer {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  position: absolute;
+  bottom: 0;
+  margin: 1rem;
 }
 
 @media screen and (max-width: 1600px) {
