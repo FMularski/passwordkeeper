@@ -44,7 +44,7 @@ nav {
     margin: auto;
     text-align: center;
     font-family: "Press Start 2P", sans-serif;
-  
+
     table {
       margin: auto;
       font-size: 0.75rem;
@@ -82,7 +82,7 @@ nav {
         button {
           width: 10rem;
           transition: all 1s ease;
-          padding: 0rem;
+          margin: 0rem;
   
           &:hover {
             animation: button-hop 0.4s ease-out;
@@ -138,13 +138,19 @@ nav {
         animation: spin 0.75s linear infinite;
       }
     }
-  
-    label {
-      text-align: left;
+
+    div.nes-field{
+      margin: 1rem;
+      
+      label {
+        text-align: left;
+      }
     }
   
-    button {
-      width: 50%;
+  
+    #ok-btn{
+      margin: 1rem;
+      width: 10rem;
       &:hover {
         animation: button-hop 0.4s ease-out;
       }

@@ -34,25 +34,25 @@
         </div>
     </nav>
     <main id="home-main">
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>No.</th>
-                    <th>Title</th>
-                    <th>Login</th>
-                    <th>Email</th>
-                    <th>Password</th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                {% if user.account_set.all %}
+        {% if user.account_set.all %}
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>No.</th>
+                        <th>Title</th>
+                        <th>Login</th>
+                        <th>Email</th>
+                        <th>Password</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
                     {% for account in user.account_set.all %}
                         <tr class="account">
-                            <td>1</td>
-                            <td>google</td>
-                            <td>-</td>
-                            <td>ag@gmail.com</td>
+                            <td>{{forloop.counter}}</td>
+                            <td>{{account.title}}</td>
+                            <td>{{account.login}}</td>
+                            <td>{{account.email}}</td>
                             <td>???</td>
                             <td><img class="gear" src="{% static 'home/img/white-gear.png'%}" alt="gear"></td>
                         </tr>
@@ -64,11 +64,11 @@
                             </td>
                         </tr>
                     {% endfor %}
-                {% else %}
-                    No account yet.
-                {% endif %}
-            </tbody>
-        </table>
+                </tbody>
+            </table>
+        {% else %}
+            <p class="nes-container is-rounded is-dark">No accounts yet.</p>
+        {% endif %}
 
     </main>
 
@@ -83,25 +83,26 @@
             <i id="register-close" class="nes-icon close is-small"></i>
             <div class="nes-field">
                 <label for="title">Title</label>
-                <input type="text" id="title" class="nes-input"><br/>
+                {{form.title}}
+                <!-- <input type="text" id="title" class="nes-input"><br/> -->
             </div>
             <div class="nes-field">
                 <label for="login">Login</label>
-                <input type="text" id="login" class="nes-input"><br/>
+                {{form.login}}
             </div>
             <div class="nes-field">
                 <label for="email">Email</label>
-                <input type="email" id="email" class="nes-input"><br/>
+                {{form.email}}
             </div>
             <div class="nes-field">
                 <label for="password">Password</label>
-                <input type="password" class="pin nes-input"><br/>
+                {{form.password}}
             </div>
             <div class="nes-field">
                 <label for="confirm">Confirm password</label>
-                <input type="password" id="confirm" class="nes-input"><br/>
+                {{form.confirm}}
             </div>
-            <button type="button" class="nes-btn is-primary">OK</button>
+            <input type="submit" class="nes-btn is-primary" id="ok-btn" value="OK"/>
         </form>
     </div>
 

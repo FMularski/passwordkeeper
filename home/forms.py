@@ -3,6 +3,7 @@ from .models import Account
 
 
 class AccountForm(forms.ModelForm):
+    confirm = forms.CharField(max_length=256, widget=forms.PasswordInput(attrs={'class': 'nes-input'}))
     class Meta:
         model = Account
         exclude = ['owner']

@@ -99,7 +99,7 @@ nav button:hover {
   width: 10rem;
   -webkit-transition: all 1s ease;
   transition: all 1s ease;
-  padding: 0rem;
+  margin: 0rem;
 }
 
 #home-main table tr.account-settings button:hover {
@@ -160,15 +160,20 @@ nav button:hover {
           animation: spin 0.75s linear infinite;
 }
 
-#account-form-panel label {
+#account-form-panel div.nes-field {
+  margin: 1rem;
+}
+
+#account-form-panel div.nes-field label {
   text-align: left;
 }
 
-#account-form-panel button {
-  width: 50%;
+#account-form-panel #ok-btn {
+  margin: 1rem;
+  width: 10rem;
 }
 
-#account-form-panel button:hover {
+#account-form-panel #ok-btn:hover {
   -webkit-animation: button-hop 0.4s ease-out;
           animation: button-hop 0.4s ease-out;
 }
