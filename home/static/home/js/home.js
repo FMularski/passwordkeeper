@@ -38,7 +38,7 @@ $(document).ready( function() {
     closeForm.on('click', function(){
       
 
-        $('input').val('');
+        $('.nes-input').val('');
 
         dark.removeClass('active');
         pinForm.removeClass('active');

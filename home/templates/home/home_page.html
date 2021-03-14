@@ -79,7 +79,8 @@
     <div id="dark-panel" class=""></div>
 
     <div id="account-form-panel" class="nes-container is-rounded">
-        <form id="account-form">
+        <form id="account-form" action="" method="POST">
+            {% csrf_token %}
             <i id="register-close" class="nes-icon close is-small"></i>
             <div class="nes-field">
                 <label for="title">Title</label>
