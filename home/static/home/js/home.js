@@ -9,9 +9,7 @@ $(document).ready( function() {
         const tr = $(this).parent().parent();
         const settings = tr.next();
 
-        $(this).click(function() {
-            settings.toggleClass('hidden');
-        })
+        settings.toggleClass('hidden');
     });
 
     /* show pin form - SHOW*/

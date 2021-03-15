@@ -5,6 +5,11 @@ from .models import Account
 class AccountForm(forms.ModelForm):
     def clean(self):
         cleaned_data = super().clean()
+        title = cleaned_data.get('title')
+        
+        if not title:
+            raise forms.ValidationError('Title is required.')
+        
         login = cleaned_data.get('login')
         email = cleaned_data.get('email')
 
