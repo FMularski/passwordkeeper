@@ -184,7 +184,7 @@ nav
   }
 }
   
-#pin-form 
+#pin-form, #confirm-del-form-panel
 {
   left: 50%;
   font-size: 1rem;
@@ -207,6 +207,11 @@ nav
   {
     width: 80%;
     margin: auto;
+  }
+
+  #conf-del-form
+  {
+    display: inline;
   }
   
   button 

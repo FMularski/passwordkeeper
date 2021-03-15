@@ -179,7 +179,7 @@ nav button:hover {
           transform: translateX(-50%) translateY(5%);
 }
 
-#pin-form {
+#pin-form, #confirm-del-form-panel {
   left: 50%;
   font-size: 1rem;
   -webkit-transform: translateX(-50%) translateY(-110%);
@@ -195,26 +195,30 @@ nav button:hover {
   transition: all 0.3s ease-out;
 }
 
-#pin-form.active {
+#pin-form.active, #confirm-del-form-panel.active {
   -webkit-transform: translateX(-50%) translateY(50%);
           transform: translateX(-50%) translateY(50%);
 }
 
-#pin-form .pin {
+#pin-form .pin, #confirm-del-form-panel .pin {
   width: 80%;
   margin: auto;
 }
 
-#pin-form button {
+#pin-form #conf-del-form, #confirm-del-form-panel #conf-del-form {
+  display: inline;
+}
+
+#pin-form button, #confirm-del-form-panel button {
   width: 25%;
 }
 
-#pin-form button:hover {
+#pin-form button:hover, #confirm-del-form-panel button:hover {
   -webkit-animation: button-hop 0.4s ease-out;
           animation: button-hop 0.4s ease-out;
 }
 
-#pin-form i {
+#pin-form i, #confirm-del-form-panel i {
   margin: .5rem;
   position: absolute;
   top: 0;
@@ -226,7 +230,7 @@ nav button:hover {
   transition: all 1s ease-out;
 }
 
-#pin-form i:hover {
+#pin-form i:hover, #confirm-del-form-panel i:hover {
   -webkit-animation: spin 0.75s linear infinite;
           animation: spin 0.75s linear infinite;
 }

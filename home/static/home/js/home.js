@@ -34,12 +34,30 @@ $(document).ready( function() {
         accountForm.addClass('active');
     });
 
+
+    /* show confirm delete dialog */
+    const confirmDeleteDialog = $('#confirm-del-form-panel');
+    const deleteButtons = document.querySelectorAll('.delete-btn');
+    const confDelNoBtn = document.querySelector('#confirm-del-no-btn');
+    const confDelForm = document.querySelector('#conf-del-form');
+
+    deleteButtons.forEach(btn => {
+        btn.addEventListener('click', function(){
+            dark.addClass('active');
+            confirmDeleteDialog.addClass('active');
+
+            confDelForm.action = this.getAttribute('url-to-pass');
+        })
+    })
+
+    confDelNoBtn.addEventListener('click', function(){
+        dark.removeClass('active');
+        confirmDeleteDialog.removeClass('active');
+    })
+
     const closeForm = $('i');
     closeForm.on('click', function(){
-      
-
         $('.nes-input').val('');
-
         dark.removeClass('active');
         pinForm.removeClass('active');
         accountForm.removeClass('active');
