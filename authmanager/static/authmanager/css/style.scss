@@ -1,8 +1,10 @@
-body {
+body 
+{
   overflow-x: hidden;
 }
 
-#login-main {
+#login-main 
+{
   width: 100vw;
   margin: auto;
   text-align: center;
@@ -11,31 +13,37 @@ body {
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: black;
 
-  h1 {
+  h1 
+  {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     font-size: 2.5rem;
     color: white;
 
-    span {
-      span {
+    span 
+    {
+      span 
+      {
         color: #e59400;
       }
     }
 
-    img {
+    img 
+    {
       max-width: 12vw;
       margin: auto;
     }
   }
 
-  form {
+  form 
+  {
     padding: 2rem;
     margin: auto;
     width: 35rem;
 
-    label {
+    label 
+    {
       text-align: left;
       padding-top: 1rem;
       margin-left: 0;
@@ -43,34 +51,41 @@ body {
       font-size: 1rem;
     }
 
-    #username_login, #password_login{
+    #username_login, #password_login
+    {
       font-size: .7rem;
     }
 
-    #login-btn{
+    #login-btn
+    {
       font-size: 1rem;
     }
   }
 
-  input[type="submit"] {
+  input[type="submit"] 
+  {
     margin: 1rem;
     padding: 0.5rem;
 
-    &:hover {
+    &:hover 
+    {
       animation: bounce 0.4s ease-out;
     }
   }
 }
   
-#open-form-btn {
+#open-form-btn 
+{
   font-size: 0.7rem;
   margin: 0;
-  &:hover {
+  &:hover 
+  {
     animation: bounce 0.4s ease-out;
   }
 }
 
-#dark-panel {
+#dark-panel 
+{
   position: fixed;
   top: 0;
   left: 0;
@@ -82,17 +97,15 @@ body {
   opacity: 0;
   pointer-events: none;
 
-  &.active {
+  &.active 
+  {
     pointer-events: all;
     opacity: 1;
   }
 }
 
-.nes-icon {
-  transform: scale(1);
-}
-
-#register-panel {
+#register-panel 
+{
   margin: auto;
   position: relative;
   background: white;
@@ -101,13 +114,13 @@ body {
   transform: translateY(-110%);
   transition: all 0.3s ease-out;
 
-  
-
-  &.active {
+  &.active 
+  {
     transform: translateY(5%);
   }
 
-  i {
+  i 
+  {
     margin: 1rem;
     position: absolute;
     top: 0;
@@ -115,127 +128,46 @@ body {
     cursor: pointer;
     transform-origin: center;
     transition: all 1s ease-out;
+    transform: scale(1);
 
-    &:hover {
+    &:hover 
+    {
       animation: spin 0.75s linear infinite;
     }
   }
 
-  div.nes-field {
+  div.nes-field 
+  {
     margin: 1.5rem;
 
-    label {
+    label 
+    {
       font-size: 1.2rem;
       text-align: left;
     }
 
-    input {
+    input 
+    {
       font-size: 1rem;
     }
   }
 
-  #register-btn {
+  #register-btn 
+  {
     font-size: 1rem;
-    &:hover {
+
+    &:hover 
+    {
       animation: bounce 0.4s ease-out;
     }
   }
 }
 
-.popup{
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 50rem;
-  font-size: 1rem;
-  animation: error-bounce 0.4s ease-out;
 
-  .popup-close {
-    margin: 1rem;
-    position: absolute;
-    top: 0;
-    right: 0;
-    cursor: pointer;
-    transform-origin: center;
-    transition: all 1s ease-out;
-
-    &:hover {
-      animation: spin 0.75s linear infinite;
-    }
-  }
-}
-
-#form-errors, .error-message{
-  background-color: red;
-  color: white;  
-}
-
-.success-message {
-  background-color: rgb(0, 255, 0);
-  color: white;
-}
-
-@keyframes swoosh {
-  0%{
-    transform: translateX(-50%);
-  }
-  50%{
-    transform: translateX(-50%) translateY(20%);
-  }
-  100%{
-    transform: translateX(-50%) translateY(-200%);
-  }
-}
-
-@keyframes error-bounce {
-  0% {
-    transform: translateY(0) translateX(-50%);
-  }
-  25% {
-    transform: translateY(-25px) translateX(-50%);
-  }
-  50% {
-    transform: translateY(0) translateX(-50%);
-  }
-  75% {
-    transform: translateY(-10px) translateX(-50%);
-  }
-  100% {
-    transform: translateY(0px) translateX(-50%);
-  }
-}
-
-@keyframes bounce {
-  0% {
-    transform: translateY(0);
-  }
-  25% {
-    transform: translateY(-25px);
-  }
-  50% {
-    transform: translateY(0);
-  }
-  75% {
-    transform: translateY(-10px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
-}
-
-@keyframes spin {
-  from {
-    transform: rotateZ(0deg);
-  } 
-  to {
-    transform: rotateZ(360deg);
-  }
-}
-
-
-@media screen and (max-width: 1024px) {
-  #login-main {
+@media screen and (max-width: 1024px) 
+{
+  #login-main 
+  {
     -webkit-text-stroke-width: 0px;
     min-height: 50vh;
     margin-top: 20vh;

@@ -1,22 +1,26 @@
-* {
+* 
+{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     font-family: "Press Start 2P", cursive;
 }
 
-html {
+html 
+{
   min-height: 100%;
   position: relative;
 }
 
-body {
+body 
+{
     background: url("../img/brick.png"); //rgb(248, 248, 160);
     background-size: 5%;
     background-color: black;
 }
 
-input {
+input 
+{
     margin: auto;
     transition: all 0.25s ease;
     text-align: center;
@@ -27,7 +31,8 @@ input {
 
 }
 
-footer {
+footer 
+{
     color: white;
     width: 100%;
     font-size: .7rem;
@@ -40,39 +45,165 @@ footer {
     margin: 1rem;
 }
 
-@media screen and (max-width: 1600px) {
-    html {
+.popup
+{
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50rem;
+  font-size: 1rem;
+  animation: error-bounce 0.4s ease-out;
+
+  .popup-close 
+  {
+    margin: 1rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    transform-origin: center;
+    transition: all 1s ease-out;
+    transform: scale(1);
+
+    &:hover 
+    {
+      animation: spin 0.75s linear infinite;
+    }
+  }
+}
+
+.errorlist 
+{
+  list-style: '* ';
+}
+
+#form-errors, .error-message
+{
+  background-color: red;
+  color: white;  
+}
+
+.success-message 
+{
+  background-color: rgb(0, 255, 0);
+  color: white;
+}
+
+.hidden 
+{
+  display: none;
+}
+
+/*anims*/
+
+@keyframes swoosh 
+{
+  0%{
+    transform: translateX(-50%);
+  }
+  50%{
+    transform: translateX(-50%) translateY(20%);
+  }
+  100%{
+    transform: translateX(-50%) translateY(-200%);
+  }
+}
+
+@keyframes error-bounce 
+{
+  0% {
+    transform: translateY(0) translateX(-50%);
+  }
+  25% {
+    transform: translateY(-25px) translateX(-50%);
+  }
+  50% {
+    transform: translateY(0) translateX(-50%);
+  }
+  75% {
+    transform: translateY(-10px) translateX(-50%);
+  }
+  100% {
+    transform: translateY(0px) translateX(-50%);
+  }
+}
+
+@keyframes bounce 
+{
+  0% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-25px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  75% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes spin 
+{
+  from {
+    transform: rotateZ(0deg);
+  } 
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+
+/****************/
+
+@media screen and (max-width: 1600px) 
+{
+    html 
+    {
       font-size: 82.5%;
     }
-  }
+}
   
-  
-  @media screen and (max-width: 1200px) {
-    html {
-      font-size: 72.5%;
-    }
+@media screen and (max-width: 1200px) 
+{
+  html 
+  {
+    font-size: 72.5%;
   }
-  
-  @media screen and (max-width: 1024px) {
-    html {
-      font-size: 65.5%;
-    }
+}
+
+@media screen and (max-width: 1024px) 
+{
+  html 
+  {
+    font-size: 65.5%;
   }
-  
-  @media screen and (max-width: 700px) {
-    html {
-      font-size: 55.5%;
-    }
+}
+
+@media screen and (max-width: 700px) 
+{
+  html 
+  {
+    font-size: 55.5%;
   }
-  
-  @media screen and (max-width: 550px) {
-    html {
-      font-size: 45.5%;
-    }
+}
+
+@media screen and (max-width: 550px) 
+{
+  html 
+  {
+    font-size: 45.5%;
   }
-  
-  @media screen and (max-width: 320px) {
-    html {
-      font-size: 35.5%;
-    }
+}
+
+@media screen and (max-width: 320px) 
+{
+  html 
+  {
+    font-size: 35.5%;
   }
+}

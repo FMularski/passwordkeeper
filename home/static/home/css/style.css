@@ -107,10 +107,6 @@ nav button:hover {
           animation: button-hop 0.4s ease-out;
 }
 
-.hidden {
-  display: none;
-}
-
 #dark-panel {
   position: fixed;
   top: 0;

@@ -15,7 +15,7 @@ class AccountForm(forms.ModelForm):
         confirm = cleaned_data.get('confirm')
 
         if password != confirm:
-            raise forms.ValidationError('Passwords don\'t match.')
+            raise forms.ValidationError('The two password fields didn\'t match.')
 
         return cleaned_data
 

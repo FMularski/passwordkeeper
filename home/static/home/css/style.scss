@@ -1,242 +1,278 @@
-body {
+body 
+{
   overflow-x: hidden;
 }
 
-nav {
-    min-height: 10vh;
+nav 
+{
+  min-height: 10vh;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 1rem;
+
+  div#nav-left 
+  {
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    justify-content: space-evenly;
     align-items: center;
-    padding: 1rem;
+
+    img 
+    {
+      width: 3rem;
+    }
+
+    h1 
+    {
+      margin: 0 2vw 0 2vw;
+      font-size: 1rem;
+      color: white;
+      -webkit-text-stroke-width: 1px;
+      -webkit-text-stroke-color: black;
+    }
+  }
+
+  button 
+  {
+    width: 12vw;
+    font-size: .7rem;
+    margin: 0;
+    transition: all 1s ease;
+
+    &:hover 
+    {
+      animation: button-hop 0.4s ease-out;
+    }
+  }
+}
   
-    div#nav-left {
-      display: flex;
-      justify-content: space-evenly;
-      align-items: center;
-  
-      img {
-        width: 3rem;
-      }
-  
-      h1 {
-        margin: 0 2vw 0 2vw;
-        font-size: 1rem;
-        color: white;
-        -webkit-text-stroke-width: 1px;
-        -webkit-text-stroke-color: black;
+#home-main 
+{
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  font-family: "Press Start 2P", sans-serif;
+
+  table 
+  {
+    margin: auto;
+    font-size: 0.75rem;
+    border: 3px solid white;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    margin-bottom: 10rem;
+
+    td 
+    {
+      vertical-align: 0;
+      overflow-x: hidden;
+      max-width: 8rem;
+      overflow-y: hidden;
+    }
+
+    .gear 
+    {
+      width: 3rem;
+      transform-origin: center;
+
+      &:hover 
+      {
+        cursor: pointer;
+        animation: spin 1s linear infinite;
       }
     }
-    button {
-      width: 12vw;
-      font-size: .7rem;
-      margin: 0;
-      transition: all 1s ease;
-  
-      &:hover {
-        animation: button-hop 0.4s ease-out;
+
+    tr.account 
+    {
+      td 
+      {
+        border-top: none;
+        border-bottom: none;
+      }
+    }
+
+    tr.account-settings 
+    {
+      button 
+      {
+        width: 10rem;
+        transition: all 1s ease;
+        margin: 0rem;
+
+        &:hover 
+        {
+          animation: button-hop 0.4s ease-out;
+        }
       }
     }
   }
+}
   
-  #home-main {
+
+#dark-panel 
+{
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-height: 100vh;
+  min-width: 100vw;
+  background: rgba(0, 0, 0, 0.3);
+  transition: all 0.2s ease;
+
+  opacity: 0;
+  pointer-events: none;
+
+  &.active 
+  {
+    pointer-events: all;
+    opacity: 1;
+  }
+}
+  
+#account-form-panel 
+{
+  position: absolute;
+  top: 0;
+  background: white;
+  left: 50%;
+  transform: translateX(-50%) translateY(-110%);
+  text-align: center;
+  transition: all 0.3s ease-out;
+  width: 40rem;
+  font-size: 1rem;
+
+  i 
+  {
+    margin: 0.5rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    transform-origin: center;
+    transition: all 1s ease-out;
+
+    &:hover {
+      animation: spin 0.75s linear infinite;
+    }
+  }
+
+  div.nes-field
+  {
+    margin: 1rem;
+    
+    label 
+    {
+      text-align: left;
+    }
+  }
+
+
+  #ok-btn
+  {
+    margin: 1rem;
+    width: 10rem;
+    &:hover 
+    {
+      animation: button-hop 0.4s ease-out;
+    }
+  }
+
+  &.active 
+  {
+    transform: translateX(-50%) translateY(5%);
+  }
+}
+  
+#pin-form 
+{
+  left: 50%;
+  font-size: 1rem;
+  transform: translateX(-50%) translateY(-110%);
+
+  position: absolute;
+  background: white;
+  width: 40rem;
+  text-align: center;
+  transform-origin: center;
+  top: 0;
+  transition: all 0.3s ease-out;
+
+  &.active 
+  {
+    transform: translateX(-50%) translateY(50%);
+  }
+
+  .pin 
+  {
     width: 80%;
     margin: auto;
-    text-align: center;
-    font-family: "Press Start 2P", sans-serif;
+  }
+  
+  button 
+  {
+    width: 25%;
 
-    table {
-      margin: auto;
-      font-size: 0.75rem;
-      border: 3px solid white;
-      background: rgba(0, 0, 0, 0.7);
-      color: white;
-      margin-bottom: 10rem;
-  
-      td {
-        vertical-align: 0;
-        overflow-x: hidden;
-        max-width: 8rem;
-        overflow-y: hidden;
-        // overflow-x: auto;
-      }
-  
-      .gear {
-        width: 3rem;
-        transform-origin: center;
-  
-        &:hover {
-          cursor: pointer;
-          animation: spin 1s linear infinite;
-        }
-      }
-  
-      tr.account {
-        td {
-          border-top: none;
-          border-bottom: none;
-        }
-      }
-  
-      tr.account-settings {
-        button {
-          width: 10rem;
-          transition: all 1s ease;
-          margin: 0rem;
-  
-          &:hover {
-            animation: button-hop 0.4s ease-out;
-          }
-        }
-      }
+    &:hover 
+    {
+      animation: button-hop 0.4s ease-out;
     }
   }
   
-  .hidden {
-    display: none;
-  }
-  
-  #dark-panel {
-    position: fixed;
-    top: 0;
-    left: 0;
-    min-height: 100vh;
-    min-width: 100vw;
-    background: rgba(0, 0, 0, 0.3);
-    transition: all 0.2s ease;
-  
-    opacity: 0;
-    pointer-events: none;
-  
-    &.active {
-      pointer-events: all;
-      opacity: 1;
-    }
-  }
-  
-  #account-form-panel {
+  i 
+  {
+    margin: .5rem;
     position: absolute;
     top: 0;
-    background: white;
-    left: 50%;
-    transform: translateX(-50%) translateY(-110%);
-    text-align: center;
-    transition: all 0.3s ease-out;
-    width: 40rem;
-    font-size: 1rem;
-
-    i {
-      margin: 0.5rem;
-      position: absolute;
-      top: 0;
-      right: 0;
-      cursor: pointer;
-      transform-origin: center;
-      transition: all 1s ease-out;
-  
-      &:hover {
-        animation: spin 0.75s linear infinite;
-      }
-    }
-
-    div.nes-field{
-      margin: 1rem;
-      
-      label {
-        text-align: left;
-      }
-    }
-  
-  
-    #ok-btn{
-      margin: 1rem;
-      width: 10rem;
-      &:hover {
-        animation: button-hop 0.4s ease-out;
-      }
-    }
-  
-    &.active {
-      transform: translateX(-50%) translateY(5%);
-    }
-  }
-  
-  #pin-form {
-    left: 50%;
-    font-size: 1rem;
-    transform: translateX(-50%) translateY(-110%);
-  
-    position: absolute;
-    background: white;
-    width: 40rem;
-    text-align: center;
+    right: 0;
+    cursor: pointer;
     transform-origin: center;
-    top: 0;
-    transition: all 0.3s ease-out;
-  
-    &.active {
-      transform: translateX(-50%) translateY(50%);
-    }
-  
-    .pin {
-      width: 80%;
-      margin: auto;
-    }
-  
-    button {
-      width: 25%;
-      &:hover {
-        animation: button-hop 0.4s ease-out;
-      }
-    }
-  
-    i {
-      margin: .5rem;
-      position: absolute;
-      top: 0;
-      right: 0;
-      cursor: pointer;
-      transform-origin: center;
-      transition: all 1s ease-out;
-  
-      &:hover {
-        animation: spin 0.75s linear infinite;
-      }
+    transition: all 1s ease-out;
+
+    &:hover 
+    {
+      animation: spin 0.75s linear infinite;
     }
   }
+}
   
-  @keyframes button-hop {
-    0% {
-      transform: translateY(0);
-    }
-    25% {
-      transform: translateY(-15px);
-    }
-    50% {
-      transform: translateY(0);
-    }
-    75% {
-      transform: translateY(-5px);
-    }
-    100% {
-      transform: translateY(0px);
-    }
+@keyframes button-hop 
+{
+  0% {
+    transform: translateY(0);
   }
+  25% {
+    transform: translateY(-15px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  75% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
   
-  @keyframes spin {
-    from {
-      transform: rotateZ(0deg);
-    }
-    to {
-      transform: rotateZ(360deg);
-    }
+@keyframes spin 
+{
+  from {
+    transform: rotateZ(0deg);
   }
+  to {
+    transform: rotateZ(360deg);
+  }
+}
   
 @media screen and (max-width: 1024px) 
 {
-  nav{
-    div#nav-left{
-      h1{
+  nav
+  {
+    div#nav-left
+    {
+      h1
+      {
         -webkit-text-stroke-width: 0px;
       }
     }
@@ -245,17 +281,22 @@ nav {
 
 @media screen and (max-width: 880px)
 {
-  nav {
+  nav 
+  {
     margin-bottom: 1.5rem;
 
-    button {
+    button 
+    {
       padding: 0 !important;
     }
   }
 
-  #home-main{
-    table{
-      td{
+  #home-main
+  {
+    table
+    {
+      td
+      {
         font-size: 0.6rem;
         padding: 0;
       }
@@ -265,8 +306,10 @@ nav {
 
 @media screen and (max-width: 400px)
 {
-  nav {
-    button{
+  nav 
+  {
+    button
+    {
       font-size: .7rem;
     }
   }
@@ -274,8 +317,10 @@ nav {
 
 @media screen and (max-width: 400px)
 {
-  nav {
-    button{
+  nav 
+  {
+    button
+    {
       width: 12rem;
     }
   }
