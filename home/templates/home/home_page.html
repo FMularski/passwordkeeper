@@ -59,8 +59,8 @@
                         <tr class="account">
                             <td>{{forloop.counter}}</td>
                             <td class="acc-title">{{account.title}}</td>
-                            <td class="acc-login">{{account.login}}</td>
-                            <td class="acc-email">{{account.email}}</td>
+                            <td class="acc-login">{% if account.login%} {{account.login}} {% else %} - {% endif %}</td>
+                            <td class="acc-email">{% if account.email %} {{account.email}} {% else %} - {% endif %}</td>
                             <td class="acc-password">???</td>
                             <td><img class="gear" src="{% static 'home/img/white-gear.png'%}" alt="gear"></td>
                         </tr>

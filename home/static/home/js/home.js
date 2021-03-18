@@ -32,6 +32,12 @@ $(document).ready( function() {
         dark.addClass('active');
         accountFormPanel.addClass('active');
         accountForm.action = '';    // override action after clicking edit btn
+
+        document.querySelector('#id_title').value = '';  
+        document.querySelector('#id_login').value = '';
+        document.querySelector('#id_email').value = '';
+        document.querySelector('#id_password').value = '';
+        document.querySelector('#id_confirm').value = '';
     });
 
 
@@ -66,10 +72,14 @@ $(document).ready( function() {
 
             // fill account field with values
             const accInfo = this.parentNode.parentNode.previousElementSibling.childNodes;
-            const title = accInfo[3].innerText;
-            const login = accInfo[5].innerText;
-            const email = accInfo[7].innerText;
-            const password = accInfo[9].innerText;
+
+            let title = accInfo[3].innerText;
+            let login = accInfo[5].innerText;
+            let email = accInfo[7].innerText;
+            let password = accInfo[9].innerText;
+
+            if (login == '-') login = '';
+            if (email == '-') email = '';
 
             document.querySelector('#id_title').value = title;
             document.querySelector('#id_login').value = login;
