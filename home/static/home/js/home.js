@@ -3,7 +3,6 @@ $(document).ready( function() {
     const pinForm = $('#pin-form');
     const accountFormPanel = $('#account-form-panel');
     const accountForm = document.querySelector('#account-form');
-    console.log(accountForm);
 
     /* show options buttons */
     const table = $('table');    
@@ -64,6 +63,19 @@ $(document).ready( function() {
     editButttons.forEach(btn => {
         btn.addEventListener('click', function(){
             accountForm.action = this.getAttribute('url-to-pass');
+
+            // fill account field with values
+            const accInfo = this.parentNode.parentNode.previousElementSibling.childNodes;
+            const title = accInfo[3].innerText;
+            const login = accInfo[5].innerText;
+            const email = accInfo[7].innerText;
+            const password = accInfo[9].innerText;
+
+            document.querySelector('#id_title').value = title;
+            document.querySelector('#id_login').value = login;
+            document.querySelector('#id_email').value = email;
+            document.querySelector('#id_password').value = password;
+            document.querySelector('#id_confirm').value = password;
         })
     })
 

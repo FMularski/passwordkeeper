@@ -58,10 +58,10 @@
                     {% for account in user.account_set.all %}
                         <tr class="account">
                             <td>{{forloop.counter}}</td>
-                            <td>{{account.title}}</td>
-                            <td>{{account.login}}</td>
-                            <td>{{account.email}}</td>
-                            <td>???</td>
+                            <td class="acc-title">{{account.title}}</td>
+                            <td class="acc-login">{{account.login}}</td>
+                            <td class="acc-email">{{account.email}}</td>
+                            <td class="acc-password">???</td>
                             <td><img class="gear" src="{% static 'home/img/white-gear.png'%}" alt="gear"></td>
                         </tr>
                         <tr class="account-settings hidden">
