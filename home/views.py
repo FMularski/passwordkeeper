@@ -4,6 +4,7 @@ from .models import Account
 from django.contrib.auth.hashers import make_password
 from django.http import HttpResponse, HttpResponseBadRequest
 from django.views.decorators.http import require_http_methods
+from django.contrib import messages
 
 
 def home_page(request):
@@ -52,6 +53,12 @@ def edit_account(request, account_id):
             account_to_edit.password = account_obj_form_form.password
 
             account_to_edit.save()
+        else:
+            for field in form.errors:
+                for msg in form.errors[field]:
+                    messages.error(request, msg)
+
+
 
     
         return redirect('home:home_page')

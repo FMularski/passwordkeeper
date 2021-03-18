@@ -34,6 +34,17 @@
         </div>
     </nav>
 
+    
+    {% if messages %}
+        <div class="error-message popup nes-container is-rounded">
+            <i  class="nes-icon close popup-close"></i>
+            {% for message in messages %}
+                {{message}} <br/>
+            {% endfor %}
+        </div>
+    {% endif %}
+
+
     {% if form.non_field_errors %}
         <div id="form-errors" class="nes-container is-rounded popup">
             {{form.non_field_errors}}
