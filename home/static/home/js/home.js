@@ -1,7 +1,9 @@
 $(document).ready( function() {
     const dark = $('#dark-panel');
     const pinForm = $('#pin-form');
-    const accountForm = $('#account-form-panel');
+    const accountFormPanel = $('#account-form-panel');
+    const accountForm = document.querySelector('#account-form');
+    console.log(accountForm);
 
     /* show options buttons */
     const table = $('table');    
@@ -22,14 +24,15 @@ $(document).ready( function() {
     /* show account form - EDIT */
     table.on('click', '.edit-btn', function(){
         dark.addClass('active');
-        accountForm.addClass('active');
+        accountFormPanel.addClass('active');
     })
 
     /* show account form - ADD*/
     const addBtn = $('#add-btn');
     addBtn.on('click', function(){
         dark.addClass('active');
-        accountForm.addClass('active');
+        accountFormPanel.addClass('active');
+        accountForm.action = '';    // override action after clicking edit btn
     });
 
 
@@ -48,16 +51,30 @@ $(document).ready( function() {
         })
     })
 
+    // cancel delete
     confDelNoBtn.addEventListener('click', function(){
         dark.removeClass('active');
         confirmDeleteDialog.removeClass('active');
     })
+
+
+    /* EDIT ACCOUNT */
+    const editButttons = document.querySelectorAll('.edit-btn');
+
+    editButttons.forEach(btn => {
+        btn.addEventListener('click', function(){
+            accountForm.action = this.getAttribute('url-to-pass');
+        })
+    })
+
+
+
 
     const closeForm = $('i');
     closeForm.on('click', function(){
         $('.nes-input').val('');
         dark.removeClass('active');
         pinForm.removeClass('active');
-        accountForm.removeClass('active');
+        accountFormPanel.removeClass('active');
     });
 });

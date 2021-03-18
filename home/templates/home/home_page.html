@@ -67,7 +67,7 @@
                         <tr class="account-settings hidden">
                             <td colspan="6">
                                 <button type="button" class="nes-btn is-warning show-btn">Show</button>
-                                <button type="button" class="nes-btn is-normal edit-btn">Edit</button>
+                                <button type="button" class="nes-btn is-normal edit-btn" url-to-pass="{% url 'home:edit_account' account.id %}">Edit</button>
                                 <button type="button" class="nes-btn is-error delete-btn" url-to-pass="{% url 'home:delete_account' account.id %}">Delete</button>
                             </td>
                         </tr>
@@ -86,7 +86,7 @@
     <div id="dark-panel" class=""></div>
 
     <div id="account-form-panel" class="nes-container is-rounded">
-        <form id="account-form" action="" method="POST">
+        <form id="account-form" method="POST">
             {% csrf_token %}
             <i id="register-close" class="nes-icon close is-small"></i>
             <div class="nes-field">

@@ -27,9 +27,32 @@ def delete_account(request, account_id):
     if request.method == 'POST':
         account = get_object_or_404(Account, id=account_id)
         
-        if request.user != account.owner:
+        if request.user != account.owner:   # prevent deleting other users' accounts
             return HttpResponseBadRequest()
         
         account.delete()
 
         return redirect('home:home_page')
+
+
+@require_http_methods(['POST'])
+def edit_account(request, account_id):
+    if request.method == 'POST':
+        account_to_edit = get_object_or_404(Account, id=account_id)
+
+        if request.user != account_to_edit.owner: # prevent editing other users' accounts
+            return HttpResponseBadRequest()
+
+        form = AccountForm(request.POST)
+        if form.is_valid():
+            account_obj_form_form = form.save(commit=False)
+            account_to_edit.title = account_obj_form_form.title
+            account_to_edit.login = account_obj_form_form.login
+            account_to_edit.email = account_obj_form_form.email
+            account_to_edit.password = account_obj_form_form.password
+
+            account_to_edit.save()
+
+    
+        return redirect('home:home_page')
+        
