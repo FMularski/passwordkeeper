@@ -126,7 +126,7 @@ nav button:hover {
 }
 
 #account-form-panel {
-  position: absolute;
+  position: fixed;
   top: 0;
   background: white;
   left: 50%;
