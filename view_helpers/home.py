@@ -1,2 +1,2 @@
-def encode_password(password):
+def encode_password(password, pin):
     return '*' * len(password)

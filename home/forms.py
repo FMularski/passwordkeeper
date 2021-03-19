@@ -25,6 +25,7 @@ class AccountForm(forms.ModelForm):
         return cleaned_data
 
     confirm = forms.CharField(max_length=256, widget=forms.PasswordInput(attrs={'class': 'nes-input'}))
+    pin = forms.CharField(max_length=256, widget=forms.PasswordInput(attrs={'class': 'nes-input'}))
     class Meta:
         model = Account
         exclude = ['owner']

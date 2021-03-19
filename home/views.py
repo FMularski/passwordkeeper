@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .forms import AccountForm
 from .models import Account
-from django.contrib.auth.hashers import make_password
+from django.contrib.auth.hashers import make_password, check_password
 from django.http import HttpResponse, HttpResponseBadRequest
 from django.views.decorators.http import require_http_methods
 from django.contrib import messages
@@ -15,9 +15,14 @@ def home_page(request):
         form = AccountForm(request.POST)
         if form.is_valid():
             account = form.save(commit=False)
-            account.password = encode_password(account.password)
-            account.owner = request.user
-            account.save()
+            
+            pin = request.POST.get('pin')
+            if not check_password(pin, request.user.pin):
+                messages.error(request, 'Invalid PIN.')
+            else:
+                account.password = encode_password(account.password, pin)
+                account.owner = request.user
+                account.save()
             return redirect('home:home_page')
 
     context = {'form': form}
