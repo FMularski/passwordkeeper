@@ -17,12 +17,12 @@ def home_page(request):
             account = form.save(commit=False)
             
             pin = request.POST.get('pin')
-            if not check_password(pin, request.user.pin):
-                messages.error(request, 'Invalid PIN.')
-            else:
+            if check_password(pin, request.user.pin):
                 account.password = encode_password(account.password, pin)
                 account.owner = request.user
                 account.save()
+            else:
+                messages.error(request, 'Invalid PIN.')
             return redirect('home:home_page')
 
     context = {'form': form}
@@ -52,20 +52,23 @@ def edit_account(request, account_id):
 
         form = AccountForm(request.POST)
         if form.is_valid():
-            account_obj_form_form = form.save(commit=False)
-            account_to_edit.title = account_obj_form_form.title
-            account_to_edit.login = account_obj_form_form.login
-            account_to_edit.email = account_obj_form_form.email
-            account_to_edit.password = encode_password(account_obj_form_form.password)
+            pin = request.POST.get('pin')
+            if check_password(pin, request.user.pin):
+                account_obj_form_form = form.save(commit=False)
+                account_to_edit.title = account_obj_form_form.title
+                account_to_edit.login = account_obj_form_form.login
+                account_to_edit.email = account_obj_form_form.email
+                account_to_edit.password = encode_password(account_obj_form_form.password, pin)
 
-            account_to_edit.save()
+                account_to_edit.save()
+            else:
+                # error when pin ivalid
+                messages.error(request, 'Invalid PIN.')
         else:
+            # errors when invalid form
             for field in form.errors:
                 for msg in form.errors[field]:
                     messages.error(request, msg)
-
-
-
     
         return redirect('home:home_page')
         

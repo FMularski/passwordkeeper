@@ -10,6 +10,10 @@ class AccountForm(forms.ModelForm):
         if not title:
             raise forms.ValidationError('Title is required.')
         
+        pin = cleaned_data.get('pin')
+        if not pin:
+            raise forms.ValidationError('PIN is required.')
+        
         login = cleaned_data.get('login')
         email = cleaned_data.get('email')
 
