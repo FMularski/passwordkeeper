@@ -5,6 +5,7 @@ from django.contrib.auth.hashers import make_password
 from django.http import HttpResponse, HttpResponseBadRequest
 from django.views.decorators.http import require_http_methods
 from django.contrib import messages
+from view_helpers.home import encode_password
 
 
 def home_page(request):
@@ -14,7 +15,7 @@ def home_page(request):
         form = AccountForm(request.POST)
         if form.is_valid():
             account = form.save(commit=False)
-            account.password = make_password(account.password)
+            account.password = encode_password(account.password)
             account.owner = request.user
             account.save()
             return redirect('home:home_page')
@@ -50,7 +51,7 @@ def edit_account(request, account_id):
             account_to_edit.title = account_obj_form_form.title
             account_to_edit.login = account_obj_form_form.login
             account_to_edit.email = account_obj_form_form.email
-            account_to_edit.password = account_obj_form_form.password
+            account_to_edit.password = encode_password(account_obj_form_form.password)
 
             account_to_edit.save()
         else:

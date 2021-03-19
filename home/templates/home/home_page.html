@@ -72,7 +72,7 @@
                             <td class="acc-title">{{account.title}}</td>
                             <td class="acc-login">{% if account.login%} {{account.login}} {% else %} - {% endif %}</td>
                             <td class="acc-email">{% if account.email %} {{account.email}} {% else %} - {% endif %}</td>
-                            <td class="acc-password">???</td>
+                            <td class="acc-password">{{account.password}}</td>
                             <td><img class="gear" src="{% static 'home/img/white-gear.png'%}" alt="gear"></td>
                         </tr>
                         <tr class="account-settings hidden">
