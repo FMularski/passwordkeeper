@@ -184,7 +184,7 @@ nav button:hover {
   font-size: 1rem;
   -webkit-transform: translateX(-50%) translateY(-110%);
           transform: translateX(-50%) translateY(-110%);
-  position: absolute;
+  position: fixed;
   background: white;
   width: 40rem;
   text-align: center;
