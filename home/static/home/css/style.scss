@@ -184,7 +184,7 @@ nav
   }
 }
   
-#pin-form, #confirm-del-form-panel
+#pin-form-panel, #confirm-del-form-panel
 {
   left: 50%;
   font-size: 1rem;
@@ -240,7 +240,12 @@ nav
     }
   }
 }
-  
+
+.shown-password {
+  color: rgb(0, 255, 0);
+}
+
+
 @keyframes button-hop 
 {
   0% {

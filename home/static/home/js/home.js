@@ -1,8 +1,10 @@
 $(document).ready( function() {
     const dark = $('#dark-panel');
-    const pinForm = $('#pin-form');
+    // const pinFormPanel = $('#pin-form-panel');
     const accountFormPanel = $('#account-form-panel');
     const accountForm = document.querySelector('#account-form');
+    // const okBtn = document.querySelector('#ok-pin-btn');
+
 
     /* show options buttons */
     const table = $('table');    
@@ -11,13 +13,6 @@ $(document).ready( function() {
         const settings = tr.next();
 
         settings.toggleClass('hidden');
-    });
-
-    /* show pin form - SHOW*/
-    table.on('click', '.show-btn', function(){
-        const pinForm = $('#pin-form');
-        dark.addClass('active');
-        pinForm.addClass('active');
     });
 
     /* show account form - EDIT */
@@ -90,13 +85,10 @@ $(document).ready( function() {
     })
 
 
-
-
     const closeForm = $('i');
     closeForm.on('click', function(){
         $('.nes-input').val('');
         dark.removeClass('active');
-        pinForm.removeClass('active');
         accountFormPanel.removeClass('active');
     });
 });

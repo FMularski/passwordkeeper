@@ -2,10 +2,10 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .forms import AccountForm
 from .models import Account
 from django.contrib.auth.hashers import make_password, check_password
-from django.http import HttpResponse, HttpResponseBadRequest
+from django.http import HttpResponse, HttpResponseBadRequest, JsonResponse
 from django.views.decorators.http import require_http_methods
 from django.contrib import messages
-from view_helpers.home import encode_password
+from view_helpers.home import encode_password, decode_password
 
 
 def home_page(request):
@@ -72,3 +72,24 @@ def edit_account(request, account_id):
     
         return redirect('home:home_page')
         
+
+
+def get_account_password(request, account_id):
+    if request.is_ajax():
+        pin = request.GET.get('pin')
+
+        if not pin:
+            messages.error(request, 'PIN is required.')
+            return JsonResponse({'error': 'PIN is required.'}, status=400)
+
+        if not check_password(pin, request.user.pin):
+            messages.error(request, 'Invalid PIN.')
+            return JsonResponse({'error': 'Invalid PIN.'}, status=400)
+
+        account = Account.objects.get(pk=account_id)
+
+        if not account:
+            return JsonResponse({'error': f'Account with id: {account_id} not found.'}, status=404)
+
+        decoded_password = decode_password(account.password, pin)
+        return JsonResponse({'decodedPassword': decoded_password}, status=200)
