@@ -3,6 +3,7 @@ $(document).ready( function () {
     const dark = $('#dark-panel');
     const pinFormPanel = $('#pin-form-panel');
     let ajaxUrl = '';
+    let currentShowBtn = null;
 
     function ajaxShowFunction() {
         const pin = $('#show-pin-input').val();
@@ -28,6 +29,7 @@ $(document).ready( function () {
                         const shownPassword = $('.password-to-show');
                         shownPassword.text(response.decodedPassword);
                         shownPassword.addClass('shown-password');
+                        currentShowBtn.classList.add('disabled');
                     },
                     error: xhr => {
                         location.reload();
@@ -40,7 +42,8 @@ $(document).ready( function () {
         btn.addEventListener('click', function() {
             dark.addClass('active');
             pinFormPanel.addClass('active');
-
+            currentShowBtn = this;
+            
             ajaxUrl = this.getAttribute('url-to-pass');
             
 

@@ -239,6 +239,11 @@ nav button:hover {
   color: lime;
 }
 
+.disabled {
+  opacity: .5;
+  pointer-events: none;
+}
+
 @-webkit-keyframes button-hop {
   0% {
     -webkit-transform: translateY(0);
