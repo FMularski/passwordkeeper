@@ -23,6 +23,7 @@ def home_page(request):
                 account.password = encode_password(account.password, pin)
                 account.owner = request.user
                 account.save()
+                messages.success(request, 'Account created.')
             else:
                 messages.error(request, 'Invalid PIN.')
             return redirect('home:home_page')
@@ -40,6 +41,7 @@ def delete_account(request, account_id):
             return HttpResponseBadRequest()
         
         account.delete()
+        messages.success(request, 'Account deleted.')
 
         return redirect('home:home_page')
 
@@ -63,6 +65,7 @@ def edit_account(request, account_id):
                 account_to_edit.password = encode_password(account_obj_form_form.password, pin)
 
                 account_to_edit.save()
+                messages.success(request, 'Account updated.')
             else:
                 # error when pin ivalid
                 messages.error(request, 'Invalid PIN.')
