@@ -14,7 +14,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <link href="https://unpkg.com/nes.css@2.3.0/css/nes.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="{% static 'css/global.css'%}">
-    <link rel="stylesheet" href="{% static 'home/css/style.css'%}">
+    <link rel="stylesheet" href="{% static 'accountsettings/css/style.css'%}">
 
     <link rel="icon" href="{% static 'img/key.ico' %}">
 
@@ -24,13 +24,11 @@
     <nav>
         <div id="nav-left">
             <img src="{% static 'img/key.gif' %}" alt="spinning key"/>
-            <h1>Logged in as: {{user}}</h1>
+            <h1>Settings</h1>
         </div>
         
         <div id="nav-right">
-            <button id="add-btn" type="button" class="nes-btn is-success">+ Add</button>
-            <button type="button" class="nes-btn is-normal">Export</button>
-            <button type="button" class="nes-btn is-normal"><< Back</button>
+            <a href="{% url 'home:home_page' %}" type="button" class="nes-btn is-normal"><< Back </a>
         </div>
     </nav>
 
@@ -52,7 +50,7 @@
         </div>
     {% endif %}
 
-    <main id="home-main">
+    <main id="settings-main">
         
     </main>
 

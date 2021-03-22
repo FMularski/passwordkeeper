@@ -42,7 +42,7 @@ nav div#nav-left h1 {
   -webkit-text-stroke-color: black;
 }
 
-nav button {
+nav button, nav a {
   width: 12vw;
   font-size: .7rem;
   margin: 0;
@@ -50,7 +50,7 @@ nav button {
   transition: all 1s ease;
 }
 
-nav button:hover {
+nav button:hover, nav a:hover {
   -webkit-animation: button-hop 0.4s ease-out;
           animation: button-hop 0.4s ease-out;
 }
