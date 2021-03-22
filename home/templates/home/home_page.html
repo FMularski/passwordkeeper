@@ -30,11 +30,10 @@
         <div id="nav-right">
             <button id="add-btn" type="button" class="nes-btn is-success">+ Add</button>
             <button type="button" class="nes-btn is-normal">Export</button>
-            <button type="button" class="nes-btn is-normal">Settings</button>
+            <a href="{% url 'settings:settings' %}" type="button" class="nes-btn is-normal">Settings</a>
         </div>
     </nav>
 
-    
     {% if messages %}
         <div class="error-message popup nes-container is-rounded">
             <i  class="nes-icon close popup-close"></i>

@@ -1,0 +1,69 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet"> 
+
+    <!-- css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link href="https://unpkg.com/nes.css@2.3.0/css/nes.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="{% static 'css/global.css'%}">
+    <link rel="stylesheet" href="{% static 'home/css/style.css'%}">
+
+    <link rel="icon" href="{% static 'img/key.ico' %}">
+
+    <title>Password Keeper | Settings</title>
+  </head>
+  <body>
+    <nav>
+        <div id="nav-left">
+            <img src="{% static 'img/key.gif' %}" alt="spinning key"/>
+            <h1>Logged in as: {{user}}</h1>
+        </div>
+        
+        <div id="nav-right">
+            <button id="add-btn" type="button" class="nes-btn is-success">+ Add</button>
+            <button type="button" class="nes-btn is-normal">Export</button>
+            <button type="button" class="nes-btn is-normal"><< Back</button>
+        </div>
+    </nav>
+
+    
+    {% if messages %}
+        <div class="error-message popup nes-container is-rounded">
+            <i  class="nes-icon close popup-close"></i>
+            {% for message in messages %}
+                {{message}} <br/>
+            {% endfor %}
+        </div>
+    {% endif %}
+
+
+    {% if form.non_field_errors %}
+        <div id="form-errors" class="nes-container is-rounded popup">
+            {{form.non_field_errors}}
+            <i  class="nes-icon close popup-close"></i>
+        </div>
+    {% endif %}
+
+    <main id="home-main">
+        
+    </main>
+
+    <footer>
+        Password Keeper 2021 - All rights reserved
+    </footer>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="{% static 'js/global.js'%}"></script>
+  </body>
+</html>
