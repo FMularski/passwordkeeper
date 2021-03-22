@@ -8,6 +8,9 @@ from django.views.decorators.http import require_http_methods
 
 
 def login_page(request):
+    if request.user.is_authenticated:
+        return redirect('home:home_page')
+
     form = ExtendedUserCreationForm()
     if request.method == 'POST':
         form = ExtendedUserCreationForm(request.POST)

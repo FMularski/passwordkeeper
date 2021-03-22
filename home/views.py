@@ -2,12 +2,14 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .forms import AccountForm
 from .models import Account
 from django.contrib.auth.hashers import make_password, check_password
-from django.http import HttpResponse, HttpResponseBadRequest, JsonResponse
+from django.http import HttpResponse, HttpResponseBadRequest, JsonResponse, HttpResponseNotFound
 from django.views.decorators.http import require_http_methods
 from django.contrib import messages
 from view_helpers.home import encode_password, decode_password
+from django.contrib.auth.decorators import login_required
 
 
+@login_required(login_url='authmanager:login_page')
 def home_page(request):
     form = AccountForm()
 
@@ -93,3 +95,4 @@ def get_account_password(request, account_id):
 
         decoded_password = decode_password(account.password, pin)
         return JsonResponse({'decodedPassword': decoded_password}, status=200)
+    return HttpResponseNotFound()

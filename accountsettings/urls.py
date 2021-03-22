@@ -5,5 +5,6 @@ from . import views
 app_name = 'settings'
 
 urlpatterns = [
-    path('', views.settings_page, name='settings')
+    path('', views.settings_page, name='settings'),
+    path('logout/', views.log_out, name='log_out')
 ]

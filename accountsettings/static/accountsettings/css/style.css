@@ -44,15 +44,15 @@ nav div#nav-left h1 {
   -webkit-text-stroke-color: black;
 }
 
-nav a {
+a {
   width: 12vw;
-  font-size: .5rem;
+  font-size: .7rem;
   margin: 0;
   -webkit-transition: all 1s ease;
   transition: all 1s ease;
 }
 
-nav a:hover {
+a:hover {
   -webkit-animation: bounce 0.4s ease-out;
           animation: bounce 0.4s ease-out;
 }
