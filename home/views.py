@@ -62,7 +62,8 @@ def edit_account(request, account_id):
                 account_to_edit.title = account_obj_form_form.title
                 account_to_edit.login = account_obj_form_form.login
                 account_to_edit.email = account_obj_form_form.email
-                account_to_edit.password = encode_password(account_obj_form_form.password, pin)
+                if account_obj_form_form.password != account_to_edit.password: # prevent overencoding unchanged password during edit 
+                    account_to_edit.password = encode_password(account_obj_form_form.password, pin)
 
                 account_to_edit.save()
                 messages.success(request, 'Account updated.')
