@@ -32,29 +32,22 @@
         </div>
     </nav>
 
-    
-    {% if messages %}
-        <div class="error-message popup nes-container is-rounded">
-            <i  class="nes-icon close popup-close"></i>
-            {% for message in messages %}
-                {{message}} <br/>
-            {% endfor %}
-        </div>
-    {% endif %}
-
-
-    {% if form.non_field_errors %}
-        <div id="form-errors" class="nes-container is-rounded popup">
-            {{form.non_field_errors}}
-            <i  class="nes-icon close popup-close"></i>
-        </div>
-    {% endif %}
-
     <main id="settings-main">
         <button id="change-password-btn" class="nes-btn is-normal">Change password</button>
         <button id="change-pin-btn" class="nes-btn is-normal">Change PIN</button>
         <a href="{% url 'settings:log_out' %}" type="button" class="nes-btn is-error">Log out </a>
     </main>
+    
+    {% if messages %}
+        {% for message in messages %}
+            {% if forloop.first %}
+                <div class="{{message.tags}}-message popup nes-container is-rounded">
+                <i class="nes-icon close popup-close"></i>
+            {% endif %}
+            {{message}} <br/>
+            {% endfor %}
+        </div>
+    {% endif %}
 
     <footer>
         Password Keeper 2021 - All rights reserved
@@ -64,21 +57,24 @@
 
     <div id="change-password-form-panel" class="nes-container is-rounded">
         <i id="change-password-form-close" class="nes-icon close is-small"></i>
-        <div class="nes-field">
-            <label for="old-password">Old password:</label>
-            <input type="password" class="nes-input" id="old-password"><br/>
-            
-            <label for="new-password">New password:</label>
-            <input type="password" class="nes-input" id="new-password"><br/>
-            
-            <label for="confirm-password">Confirm password:</label>
-            <input type="password" class="nes-input" id="confirm-password"><br/>
-            
-            <label for="pin">Old password:</label>
-            <input type="password" class="nes-input" id="pin"><br/>
-
-            <button type="button" id="change-password-ok-btn" class="nes-btn is-primary">OK</button>
-        </div>
+        <form action="{% url 'settings:change_password' %}" id="change-password-form" method="POST">
+            {% csrf_token %}
+            <div class="nes-field">
+                <label for="id_old-password">Old password:</label>
+                {{password_form.old_password}}
+                
+                <label for="id_new-password">New password:</label>
+                {{password_form.new_password}}
+                
+                <label for="id_confirm-password">Confirm password:</label>
+                {{password_form.confirm_password}}
+                
+                <label for="id_pin">Confirm change with PIN:</label>
+                {{password_form.pin}}
+    
+                <input type="submit" id="change-password-ok-btn" class="nes-btn is-primary" value="OK"/>
+            </div>
+        </form>
     </div>
 
     <div id="change-pin-form-panel" class="nes-container is-rounded">
