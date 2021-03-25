@@ -28,20 +28,24 @@ nav
     h1 
     {
       margin: 0 2vw 0 2vw;
-      font-size: 1.5rem;
+      font-size: 1.25rem;
       color: white;
       -webkit-text-stroke-width: 1px;
       -webkit-text-stroke-color: black;
     }
   }
 
+
+  #back-btn {
+    width: 10rem;
+  }
 }
 
-a
+a, button
 {
-  width: 12vw;
+  width: 15rem;
   font-size: .7rem;
-  margin: 0;
+  margin: 1rem !important;
   transition: all 1s ease;
 
   &:hover 
@@ -57,6 +61,78 @@ a
   text-align: center;
   font-family: "Press Start 2P", sans-serif;
 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+
+  min-height: 50vh;
+}
+
+#dark-panel 
+{
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-height: 100vh;
+  min-width: 100vw;
+  background: rgba(0, 0, 0, 0.3);
+  transition: all 0.2s ease;
+
+  opacity: 0;
+  pointer-events: none;
+
+  &.active 
+  {
+    pointer-events: all;
+    opacity: 1;
+  }
+}
+
+#change-password-form-panel, #change-pin-form-panel
+{
+  left: 50%;
+  font-size: 1rem;
+  transform: translateX(-50%) translateY(-110%);
+
+  position: fixed;
+  background: white;
+  width: 40rem;
+  text-align: center;
+  transform-origin: center;
+  top: 0;
+  transition: all 0.3s ease-out;
+
+  &.active 
+  {
+    transform: translateX(-50%) translateY(30%);
+  }
+  
+  button 
+  {
+    width: 25%;
+
+    &:hover 
+    {
+      animation: bounce 0.4s ease-out;
+    }
+  }
+  
+  i 
+  {
+    margin: .5rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    transform-origin: center;
+    transition: all 1s ease-out;
+
+    &:hover 
+    {
+      animation: spin 0.75s linear infinite;
+    }
+  }
 }
 
 @keyframes bounce 
@@ -75,5 +151,17 @@ a
   }
   100% {
     transform: translateY(0px);
+  }
+}
+
+
+@media screen and (max-width: 1024px) {
+  nav {
+    div#nav-left{
+      h1 {
+        -webkit-text-stroke-width: 0px;
+        -webkit-text-stroke-color: black;
+      }
+    }
   }
 }

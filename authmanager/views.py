@@ -5,8 +5,6 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login
 from django.http import HttpResponse
 from django.views.decorators.http import require_http_methods
-from django.core.mail import send_mail, BadHeaderError
-import os
 
 
 def login_page(request):
@@ -20,14 +18,6 @@ def login_page(request):
             user = form.save(commit=False)
             user.pin = make_password(user.pin)
             user.save()
-
-            send_mail(
-                subject='Welcome to Password Keeper',
-                message=f'Thank you for registering {user.username}!',
-                from_email=os.environ.get('EMAIL_USER'),
-                recipient_list=[user.email],
-                fail_silently=False,
-                )
 
             messages.success(request, f'User {user.username} successfully registered.')
             return redirect('authmanager:login_page')

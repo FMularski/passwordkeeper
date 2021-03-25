@@ -28,7 +28,7 @@
         </div>
         
         <div id="nav-right">
-            <a href="{% url 'home:home_page' %}" type="button" class="nes-btn is-normal"><< Back </a>
+            <a id="back-btn" href="{% url 'home:home_page' %}" type="button" class="nes-btn is-normal"><< Back </a>
         </div>
     </nav>
 
@@ -51,6 +51,8 @@
     {% endif %}
 
     <main id="settings-main">
+        <button id="change-password-btn" class="nes-btn is-normal">Change password</button>
+        <button id="change-pin-btn" class="nes-btn is-normal">Change PIN</button>
         <a href="{% url 'settings:log_out' %}" type="button" class="nes-btn is-error">Log out </a>
     </main>
 
@@ -58,10 +60,48 @@
         Password Keeper 2021 - All rights reserved
     </footer>
 
+    <div id="dark-panel" class=""></div>
+
+    <div id="change-password-form-panel" class="nes-container is-rounded">
+        <i id="change-password-form-close" class="nes-icon close is-small"></i>
+        <div class="nes-field">
+            <label for="old-password">Old password:</label>
+            <input type="password" class="nes-input" id="old-password"><br/>
+            
+            <label for="new-password">New password:</label>
+            <input type="password" class="nes-input" id="new-password"><br/>
+            
+            <label for="confirm-password">Confirm password:</label>
+            <input type="password" class="nes-input" id="confirm-password"><br/>
+            
+            <label for="pin">Old password:</label>
+            <input type="password" class="nes-input" id="pin"><br/>
+
+            <button type="button" id="change-password-ok-btn" class="nes-btn is-primary">OK</button>
+        </div>
+    </div>
+
+    <div id="change-pin-form-panel" class="nes-container is-rounded">
+        <i id="change-pin-form-close" class="nes-icon close is-small"></i>
+        <div class="nes-field">
+            <label for="old-pin">Old PIN:</label>
+            <input type="password" class="nes-input" id="old-pin"><br/>
+            
+            <label for="new-password">New PIN:</label>
+            <input type="password" class="nes-input" id="new-pin"><br/>
+            
+            <label for="password">Confirm change with password:</label>
+            <input type="password" class="nes-input" id="password"><br/>
+
+            <button type="button" id="change-password-ok-btn" class="nes-btn is-primary">OK</button>
+        </div>
+    </div>
+
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="{% static 'js/global.js'%}"></script>
+    <script src="{% static 'accountsettings/js/settings.js' %}"></script>
   </body>
 </html>
