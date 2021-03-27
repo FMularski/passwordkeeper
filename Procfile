@@ -1,0 +1,1 @@
+web: gunicorn passwordkeeper.wsgi --log-file -
