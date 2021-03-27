@@ -45,7 +45,6 @@ nav div#nav-left h1 {
 nav button, nav a {
   width: 12vw;
   font-size: .7rem;
-  margin: 0;
   -webkit-transition: all 1s ease;
   transition: all 1s ease;
 }
@@ -105,6 +104,10 @@ nav button:hover, nav a:hover {
 #home-main table tr.account-settings button:hover {
   -webkit-animation: button-hop 0.4s ease-out;
           animation: button-hop 0.4s ease-out;
+}
+
+#home-main #no-acc-yet {
+  font-size: 1rem;
 }
 
 #dark-panel {
@@ -322,8 +325,8 @@ nav button:hover, nav a:hover {
   nav {
     margin-bottom: 1.5rem;
   }
-  nav button {
-    padding: 0 !important;
+  button.nes-btn, a.nes-btn {
+    padding: 0px;
   }
   #home-main table td {
     font-size: 0.6rem;

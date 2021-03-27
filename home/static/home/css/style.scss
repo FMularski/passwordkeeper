@@ -37,7 +37,6 @@ nav
   {
     width: 12vw;
     font-size: .7rem;
-    margin: 0;
     transition: all 1s ease;
 
     &:hover 
@@ -106,6 +105,10 @@ nav
         }
       }
     }
+  }
+
+  #no-acc-yet{
+    font-size: 1rem;
   }
 }
   
@@ -298,11 +301,10 @@ nav
   nav 
   {
     margin-bottom: 1.5rem;
+  }
 
-    button 
-    {
-      padding: 0 !important;
-    }
+  button.nes-btn, a.nes-btn {
+    padding: 0px;
   }
 
   #home-main
