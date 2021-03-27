@@ -121,12 +121,12 @@ a:hover, button:hover {
           transform: translateX(-50%) translateY(30%);
 }
 
-#change-password-form-panel #change-password-ok-btn, #change-pin-form-panel #change-password-ok-btn {
+#change-password-form-panel #change-password-ok-btn, #change-password-form-panel #change-pin-ok-btn, #change-pin-form-panel #change-password-ok-btn, #change-pin-form-panel #change-pin-ok-btn {
   margin-top: 1rem;
   width: 25%;
 }
 
-#change-password-form-panel #change-password-ok-btn:hover, #change-pin-form-panel #change-password-ok-btn:hover {
+#change-password-form-panel #change-password-ok-btn:hover, #change-password-form-panel #change-pin-ok-btn:hover, #change-pin-form-panel #change-password-ok-btn:hover, #change-pin-form-panel #change-pin-ok-btn:hover {
   -webkit-animation: bounce 0.4s ease-out;
           animation: bounce 0.4s ease-out;
 }

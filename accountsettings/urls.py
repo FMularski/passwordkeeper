@@ -7,5 +7,6 @@ app_name = 'settings'
 urlpatterns = [
     path('', views.settings_page, name='settings'),
     path('logout/', views.log_out, name='log_out'),
-    path('change_password/', views.change_password, name='change_password')
+    path('change_password/', views.change_password, name='change_password'),
+    path('change_pin/', views.change_pin, name='change_pin')
 ]

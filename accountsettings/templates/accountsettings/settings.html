@@ -60,13 +60,13 @@
         <form action="{% url 'settings:change_password' %}" id="change-password-form" method="POST">
             {% csrf_token %}
             <div class="nes-field">
-                <label for="id_old-password">Old password:</label>
+                <label for="id_old_password">Old password:</label>
                 {{password_form.old_password}}
                 
-                <label for="id_new-password">New password:</label>
+                <label for="id_new_password">New password:</label>
                 {{password_form.new_password}}
                 
-                <label for="id_confirm-password">Confirm password:</label>
+                <label for="id_confirm_password">Confirm password:</label>
                 {{password_form.confirm_password}}
                 
                 <label for="id_pin">Confirm change with PIN:</label>
@@ -79,18 +79,21 @@
 
     <div id="change-pin-form-panel" class="nes-container is-rounded">
         <i id="change-pin-form-close" class="nes-icon close is-small"></i>
-        <div class="nes-field">
-            <label for="old-pin">Old PIN:</label>
-            <input type="password" class="nes-input" id="old-pin"><br/>
-            
-            <label for="new-password">New PIN:</label>
-            <input type="password" class="nes-input" id="new-pin"><br/>
-            
-            <label for="password">Confirm change with password:</label>
-            <input type="password" class="nes-input" id="password"><br/>
-
-            <button type="button" id="change-password-ok-btn" class="nes-btn is-primary">OK</button>
-        </div>
+        <form action="{% url 'settings:change_pin' %}" id="change-pin-form" method="POST">
+            {% csrf_token %}
+            <div class="nes-field">
+                <label for="id_old_pin">Old PIN:</label>
+                {{pin_form.old_pin}}
+                
+                <label for="id_new_pin">New PIN:</label>
+                {{pin_form.new_pin}}
+                
+                <label for="id_password">Confirm change with password:</label>
+                {{pin_form.password}}
+    
+                <input type="submit" id="change-pin-ok-btn" class="nes-btn is-primary" value="OK"/>
+            </div>
+        </form>
     </div>
 
 
