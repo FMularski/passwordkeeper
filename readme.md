@@ -4,17 +4,17 @@
 ![GitHub top language](https://img.shields.io/github/languages/top/FMularski/django-week-manager?color=purple)
 ![Website](https://img.shields.io/website?url=https%3A%2F%2Fapp-password-keeper.herokuapp.com%2F)
 
-## Created with
+## 🔒 Created with
 * Django 3.1.7
 * PostgreSQL
 * [NES.css](https://nostalgic-css.github.io/NES.css/)
 * Sass
 * jQuery, AJAX
 
-## About
+## 🔒 About
 Password Keeper is a django web application created to store users' credentials. Users can add records of their accounts of any kind and retrieve the credentials at any time.
 
-## Core features 
+## 🔒 Core features 
 * Registering and authenticating users 
 
 ![register](https://user-images.githubusercontent.com/26598200/132258391-f3e2dab1-c62a-4f8c-9c74-8d063f233f86.gif)
@@ -31,11 +31,11 @@ Password Keeper is a django web application created to store users' credentials.
 
 ![show](https://user-images.githubusercontent.com/26598200/132259338-3ddcfcce-68ca-487f-aeee-6acbfc9222fd.gif)
 
-## Download 
+## 🔒 Download 
 ```bash
 git clone https://github.com/FMularski/passwordkeeper.git
 ```
-## Or experience it LIVE:
+## 🔒 Or experience it LIVE:
 [Password Keeper on Heroku](https://app-password-keeper.herokuapp.com/)
 
 
